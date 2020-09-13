@@ -62,7 +62,7 @@
 
     <script>
       // Set the date we're counting down to
-      let countDownDate = new Date("Oct 31, 2020 15:37:25").getTime();
+      let countDownDate = new Date("Oct 13, 2020 15:37:25").getTime();
 
       // Update the count down every 1 second
       let x = setInterval(() => {
@@ -104,7 +104,27 @@
         // If the count down is over, write some text
         if (timeToGo < 0) {
           clearInterval(x);
-          document.getElementById("timer").innerHTML = "EXPIRED";
+          document.getElementById(
+          "days"
+        ).innerHTML = `<span class="number">00</span>
+                <br>
+                <span class="time-unit">days</span>`;
+        document.getElementById(
+          "hours"
+        ).innerHTML = `<span class="number">00</span>
+                <br>
+                <span class="time-unit">hours</span>`;
+        document.getElementById(
+          "minutes"
+        ).innerHTML = `<span class="number">00</span>
+                <br>
+                <span class="time-unit">minutes</span>`;
+        document.getElementById(
+          "seconds"
+        ).innerHTML = `<span class="number">00</span>
+                <br>
+                <span class="time-unit">seconds</span>`;
+          document.getElementsByClassName("timer")[0].innerHTML = `<div style="font-size: 50">It's time!</div>`;
         }
       }, 1000);
     </script>
