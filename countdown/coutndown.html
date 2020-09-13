@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountDown</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Central Container -->
+      <div class="countdown-container">
+        <!-- The text content -->
+        <div class="text-content">
+          <!-- Heading and sub - heading -->
+          <div class="heading">
+            <h1>Coming soon</h1>
+            <small>
+              The clock is ticking. We're coming up with an easier experience
+              for you to transact with us.
+            </small>
+          </div>
+          <!-- Heading and sub - heading close-->
+
+          <!-- Timer and subscribe button -->
+          <div class="timer-and-subscribe">
+            <!-- Timer -->
+            <div class="timer">
+              <div id="days"></div>
+              <div id="hours"></div>
+              <div id="minutes"></div>
+              <div id="seconds"></div>
+            </div>
+            <!-- Timer close -->
+
+            <!-- Subscribe button -->
+            <div class="subscribe">
+              <button>Subscribe</button>
+            </div>
+            <!-- Subscribe button close -->
+          </div>
+          <!-- Timer and subscribe button close-->
+
+          <!-- Social media icons -->
+          <div class="social-media-glyphs">
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
+          </div>
+          <!-- Social media icons close-->
+        </div>
+        <!-- The text content close-->
+
+        <!-- Clock vector -->
+        <div class="clock-vector"></div>
+        <!-- Clock vector closes -->
+      </div>
+
+      <!-- Central container close -->
+    </div>
+
+    <script>
+      // Set the date we're counting down to
+      let countDownDate = new Date("Oct 31, 2020 15:37:25").getTime();
+
+      // Update the count down every 1 second
+      let x = setInterval(() => {
+        // Get today's date and time
+        let now = new Date().getTime();
+
+        // Find the timeToGo between now and the count down date
+        let timeToGo = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        let days = Math.floor(timeToGo / (1000 * 60 * 60 * 24));
+        let hours = Math.floor(
+          (timeToGo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        let minutes = Math.floor((timeToGo % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeToGo % (1000 * 60)) / 1000);
+
+        document.getElementById(
+          "days"
+        ).innerHTML = `<span class="number">${days}</span>
+                <br>
+                <span class="time-unit">days</span>`;
+        document.getElementById(
+          "hours"
+        ).innerHTML = `<span class="number">${hours}</span>
+                <br>
+                <span class="time-unit">hours</span>`;
+        document.getElementById(
+          "minutes"
+        ).innerHTML = `<span class="number">${minutes}</span>
+                <br>
+                <span class="time-unit">minutes</span>`;
+        document.getElementById(
+          "seconds"
+        ).innerHTML = `<span class="number">${seconds}</span>
+                <br>
+                <span class="time-unit">seconds</span>`;
+
+        // If the count down is over, write some text
+        if (timeToGo < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

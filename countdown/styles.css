@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Content inside body */
+.main-content {
+  background: linear-gradient(to right, #7c2f00, #ff914d);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Central Container */
+.countdown-container {
+  background: #000020;
+  display: flex;
+  width: 55vw;
+  height: 75vh;
+  border-radius: 10px;
+  color: white;
+}
+
+/* Left side - text content, right side - clock vector */
+.text-content,
+.clock-vector {
+  flex: 1;
+}
+
+.clock-vector {
+  display: block;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.text-content > div {
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+/* Heading and sub-heading inside text content */
+.text-content .heading small {
+  line-height: 1.5;
+}
+
+/* Division containing the countdown */
+.timer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+}
+
+/* Digits in the countdown */
+.timer .number {
+  font-size: 30;
+}
+
+/* Labels in the countdown */
+.timer .time-unit {
+  color: #ff914d;
+  font-weight: lighter;
+  font-size: 0.8rem;
+}
+
+/* Socail media icons */
+.social-media-glyphs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75px;
+}
+
+.social-media-glyphs i {
+  color: white;
+}
+
+/* Icon animation */
+.social-media-glyphs i:hover {
+  color: #ff914d;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform-origin: center;
+  -moz-transform-origin: center;
+  -webkit-transform-origin: center;
+  transition: 0.25s ease all;
+  -moz-transition: 0.25s ease all;
+  -webkit-transition: 0.25s ease all;
+}
+
+/* Subscribe button */
+.subscribe button {
+  background: #ff914d;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  width: 150px;
+  height: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.subscribe button:focus {
+  outline: none;
+}
+
+/* Media Queries */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .clock-vector {
+    display: none;
+  }
+  .text-content > div {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .subscribe {
+    text-align: center;
+  }
+  .social-media-glyphs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 1024px) {
+  .heading {
+    text-align: center;
+  }
+  .text-content .heading small {
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  .clock-vector {
+    display: none;
+  }
+  .text-content > div {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .timer {
+    margin-bottom: 7.5vh;
+  }
+  .subscribe {
+    text-align: center;
+  }
+  .social-media-glyphs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+  }
+}
